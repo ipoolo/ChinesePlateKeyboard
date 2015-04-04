@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930A05991ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A05981ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.m */; };
 		932F0BA31ACEB4FB000A4E7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BA21ACEB4FB000A4E7B /* main.m */; };
 		932F0BA61ACEB4FB000A4E7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BA51ACEB4FB000A4E7B /* AppDelegate.m */; };
 		932F0BA91ACEB4FB000A4E7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BA81ACEB4FB000A4E7B /* ViewController.m */; };
@@ -14,6 +15,14 @@
 		932F0BAE1ACEB4FB000A4E7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 932F0BAD1ACEB4FB000A4E7B /* Images.xcassets */; };
 		932F0BB11ACEB4FB000A4E7B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 932F0BAF1ACEB4FB000A4E7B /* LaunchScreen.xib */; };
 		932F0BBD1ACEB4FB000A4E7B /* demoForInputCarPlateWindowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BBC1ACEB4FB000A4E7B /* demoForInputCarPlateWindowTests.m */; };
+		932F0BC91ACEB531000A4E7B /* PLLInputCarPlateWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BC81ACEB531000A4E7B /* PLLInputCarPlateWindow.m */; };
+		932F0BD11ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BCF1ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.m */; };
+		932F0BD21ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 932F0BD01ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.xib */; };
+		932F0BD61ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BD41ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.m */; };
+		932F0BD71ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 932F0BD51ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.xib */; };
+		932F0BDB1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BDA1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m */; };
+		932F0BDE1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BDD1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m */; };
+		93F13B811ACFE191000DA503 /* PLLInputCarPlateConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F13B801ACFE191000DA503 /* PLLInputCarPlateConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930A05971ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLInputCarPlateWindowCommon.h; path = PLLInputCarPlateWindow/PLLInputCarPlateWindowCommon.h; sourceTree = "<group>"; };
+		930A05981ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputCarPlateWindowCommon.m; path = PLLInputCarPlateWindow/PLLInputCarPlateWindowCommon.m; sourceTree = "<group>"; };
 		932F0B9D1ACEB4FB000A4E7B /* demoForInputCarPlateWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoForInputCarPlateWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		932F0BA11ACEB4FB000A4E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		932F0BA21ACEB4FB000A4E7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +51,20 @@
 		932F0BB61ACEB4FB000A4E7B /* demoForInputCarPlateWindowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoForInputCarPlateWindowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		932F0BBB1ACEB4FB000A4E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		932F0BBC1ACEB4FB000A4E7B /* demoForInputCarPlateWindowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoForInputCarPlateWindowTests.m; sourceTree = "<group>"; };
+		932F0BC71ACEB531000A4E7B /* PLLInputCarPlateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLInputCarPlateWindow.h; path = PLLInputCarPlateWindow/PLLInputCarPlateWindow.h; sourceTree = "<group>"; };
+		932F0BC81ACEB531000A4E7B /* PLLInputCarPlateWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputCarPlateWindow.m; path = PLLInputCarPlateWindow/PLLInputCarPlateWindow.m; sourceTree = "<group>"; };
+		932F0BCE1ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLKeyBoardAreaCollectionViewCell.h; path = PLLInputCarPlateWindow/cell/PLLKeyBoardAreaCollectionViewCell.h; sourceTree = "<group>"; };
+		932F0BCF1ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLKeyBoardAreaCollectionViewCell.m; path = PLLInputCarPlateWindow/cell/PLLKeyBoardAreaCollectionViewCell.m; sourceTree = "<group>"; };
+		932F0BD01ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PLLKeyBoardAreaCollectionViewCell.xib; path = PLLInputCarPlateWindow/cell/PLLKeyBoardAreaCollectionViewCell.xib; sourceTree = "<group>"; };
+		932F0BD31ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLResultAreaCellCollectionViewCell.h; path = PLLInputCarPlateWindow/cell/PLLResultAreaCellCollectionViewCell.h; sourceTree = "<group>"; };
+		932F0BD41ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLResultAreaCellCollectionViewCell.m; path = PLLInputCarPlateWindow/cell/PLLResultAreaCellCollectionViewCell.m; sourceTree = "<group>"; };
+		932F0BD51ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PLLResultAreaCellCollectionViewCell.xib; path = PLLInputCarPlateWindow/cell/PLLResultAreaCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		932F0BD91ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLInputResultAreaViewHandler.h; path = PLLInputCarPlateWindow/handler/PLLInputResultAreaViewHandler.h; sourceTree = "<group>"; };
+		932F0BDA1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputResultAreaViewHandler.m; path = PLLInputCarPlateWindow/handler/PLLInputResultAreaViewHandler.m; sourceTree = "<group>"; };
+		932F0BDC1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLInputKeyboardAreaViewHandler.h; path = PLLInputCarPlateWindow/handler/PLLInputKeyboardAreaViewHandler.h; sourceTree = "<group>"; };
+		932F0BDD1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputKeyboardAreaViewHandler.m; path = PLLInputCarPlateWindow/handler/PLLInputKeyboardAreaViewHandler.m; sourceTree = "<group>"; };
+		93F13B7F1ACFE191000DA503 /* PLLInputCarPlateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLInputCarPlateConfig.h; path = PLLInputCarPlateWindow/PLLInputCarPlateConfig.h; sourceTree = "<group>"; };
+		93F13B801ACFE191000DA503 /* PLLInputCarPlateConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputCarPlateConfig.m; path = PLLInputCarPlateWindow/PLLInputCarPlateConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930A059A1ACFD33500A941B5 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				93F13B7F1ACFE191000DA503 /* PLLInputCarPlateConfig.h */,
+				93F13B801ACFE191000DA503 /* PLLInputCarPlateConfig.m */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
 		932F0B941ACEB4FB000A4E7B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +115,7 @@
 		932F0B9F1ACEB4FB000A4E7B /* demoForInputCarPlateWindow */ = {
 			isa = PBXGroup;
 			children = (
+				932F0BC61ACEB504000A4E7B /* WINDOW */,
 				932F0BA41ACEB4FB000A4E7B /* AppDelegate.h */,
 				932F0BA51ACEB4FB000A4E7B /* AppDelegate.m */,
 				932F0BA71ACEB4FB000A4E7B /* ViewController.h */,
@@ -117,6 +152,60 @@
 				932F0BBB1ACEB4FB000A4E7B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		932F0BC61ACEB504000A4E7B /* WINDOW */ = {
+			isa = PBXGroup;
+			children = (
+				930A059A1ACFD33500A941B5 /* config */,
+				932F0BD81ACEDDC1000A4E7B /* handler */,
+				932F0BCB1ACEDAAB000A4E7B /* cell */,
+				930A05971ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.h */,
+				930A05981ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.m */,
+				932F0BC71ACEB531000A4E7B /* PLLInputCarPlateWindow.h */,
+				932F0BC81ACEB531000A4E7B /* PLLInputCarPlateWindow.m */,
+			);
+			name = WINDOW;
+			sourceTree = "<group>";
+		};
+		932F0BCB1ACEDAAB000A4E7B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				932F0BCD1ACEDAD1000A4E7B /* keyboardAreaCell */,
+				932F0BCC1ACEDAC9000A4E7B /* resultAreaCell */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		932F0BCC1ACEDAC9000A4E7B /* resultAreaCell */ = {
+			isa = PBXGroup;
+			children = (
+				932F0BD31ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.h */,
+				932F0BD41ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.m */,
+				932F0BD51ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.xib */,
+			);
+			name = resultAreaCell;
+			sourceTree = "<group>";
+		};
+		932F0BCD1ACEDAD1000A4E7B /* keyboardAreaCell */ = {
+			isa = PBXGroup;
+			children = (
+				932F0BCE1ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.h */,
+				932F0BCF1ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.m */,
+				932F0BD01ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.xib */,
+			);
+			name = keyboardAreaCell;
+			sourceTree = "<group>";
+		};
+		932F0BD81ACEDDC1000A4E7B /* handler */ = {
+			isa = PBXGroup;
+			children = (
+				932F0BD91ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.h */,
+				932F0BDA1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m */,
+				932F0BDC1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.h */,
+				932F0BDD1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m */,
+			);
+			name = handler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +291,8 @@
 				932F0BAC1ACEB4FB000A4E7B /* Main.storyboard in Resources */,
 				932F0BB11ACEB4FB000A4E7B /* LaunchScreen.xib in Resources */,
 				932F0BAE1ACEB4FB000A4E7B /* Images.xcassets in Resources */,
+				932F0BD71ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.xib in Resources */,
+				932F0BD21ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +311,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				932F0BA91ACEB4FB000A4E7B /* ViewController.m in Sources */,
+				932F0BDB1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m in Sources */,
 				932F0BA61ACEB4FB000A4E7B /* AppDelegate.m in Sources */,
+				93F13B811ACFE191000DA503 /* PLLInputCarPlateConfig.m in Sources */,
+				932F0BD11ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.m in Sources */,
+				932F0BD61ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.m in Sources */,
+				932F0BDE1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m in Sources */,
+				930A05991ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.m in Sources */,
 				932F0BA31ACEB4FB000A4E7B /* main.m in Sources */,
+				932F0BC91ACEB531000A4E7B /* PLLInputCarPlateWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = demoForInputCarPlateWindow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = demoForInputCarPlateWindow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -414,6 +514,7 @@
 				932F0BC21ACEB4FB000A4E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		932F0BC31ACEB4FB000A4E7B /* Build configuration list for PBXNativeTarget "demoForInputCarPlateWindowTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +523,7 @@
 				932F0BC51ACEB4FB000A4E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

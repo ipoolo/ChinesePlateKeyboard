@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PLLKeyBoardAreaCollectionViewCell" id="gTV-IL-0wX" customClass="PLLKeyBoardAreaCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J8n-Ji-ayG">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTm-Fl-Jvg">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="CTm-Fl-Jvg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="644-aS-Mim"/>
+                <constraint firstItem="CTm-Fl-Jvg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9jb-3h-cZs"/>
+                <constraint firstAttribute="trailing" secondItem="J8n-Ji-ayG" secondAttribute="trailing" id="Txt-8K-0nN"/>
+                <constraint firstAttribute="trailing" secondItem="CTm-Fl-Jvg" secondAttribute="trailing" id="ZFu-cn-EDB"/>
+                <constraint firstItem="J8n-Ji-ayG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a5W-jW-uBC"/>
+                <constraint firstAttribute="bottom" secondItem="CTm-Fl-Jvg" secondAttribute="bottom" id="f2u-Fi-DMC"/>
+                <constraint firstAttribute="bottom" secondItem="J8n-Ji-ayG" secondAttribute="bottom" id="oDb-hF-9nY"/>
+                <constraint firstItem="J8n-Ji-ayG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wjM-KA-PZy"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundImageView" destination="J8n-Ji-ayG" id="h2N-Sd-5BB"/>
+                <outlet property="label" destination="CTm-Fl-Jvg" id="piD-VR-Idt"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

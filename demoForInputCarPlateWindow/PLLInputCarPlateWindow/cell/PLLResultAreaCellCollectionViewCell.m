@@ -7,11 +7,18 @@
 //
 
 #import "PLLResultAreaCellCollectionViewCell.h"
+#import "PLLInputCarPlateConfig.h"
 
 @implementation PLLResultAreaCellCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [self.label setTextColor:[PLLInputCarPlateConfig resultViewCellLabelNormalColor]];
+    [self.label setHighlightedTextColor:[PLLInputCarPlateConfig resultViewCellLabelHighlightColor]];
+    
+    [self setBackgroundColor:[PLLInputCarPlateConfig resultViewCellColor]];
+
+    [self setSelectedBackgroundView:[[UIView alloc] init]];
+    [self.selectedBackgroundView setBackgroundColor:[PLLInputCarPlateConfig resultViewCellSelectedColor]];
 }
 
 @end

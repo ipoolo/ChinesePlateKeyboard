@@ -10,4 +10,6 @@
 
 @interface PLLResultAreaCellCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
 @end

@@ -7,11 +7,16 @@
 //
 
 #import "PLLKeyBoardAreaCollectionViewCell.h"
+#import "PLLInputCarPlateConfig.h"
 
 @implementation PLLKeyBoardAreaCollectionViewCell
-
 - (void)awakeFromNib {
-    // Initialization code
+    [self.label setTextColor:[PLLInputCarPlateConfig keyboardViewCellLabelNormalColor]];
+    [self.label setHighlightedTextColor:[PLLInputCarPlateConfig keyboardViewCellLabelHighlightColor]];
+
+    [self.backgroundImageView setImage:[PLLInputCarPlateConfig keyboardViewCellBackGroundImageViewNormalImage]];
+    [self.backgroundImageView setHighlightedImage:[PLLInputCarPlateConfig keyboardViewCellBackGroundImageViewHighlightImage]];
+    
 }
 
 @end

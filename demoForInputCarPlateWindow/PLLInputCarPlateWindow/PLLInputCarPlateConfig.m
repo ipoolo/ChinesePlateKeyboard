@@ -11,13 +11,13 @@
 @implementation PLLInputCarPlateConfig
 
 #pragma mark - resultView
-+(UIColor *)resultViewColor{
-    return UIColorFromRGB(0xff0000);
++(UIColor *)resultViewBackgroundColor{
+    return UIColorFromRGB(0x007500);
 }
 +(UIColor *)resultViewCellColor{
     return UIColorFromRGB(0xcc00cc);
 }
-+(UIColor *)resultViewCellSelectColor{
++(UIColor *)resultViewCellSelectedColor{
     return UIColorFromRGB(0xccffcc);
 }
 +(UIColor *)resultViewCellLabelNormalColor{
@@ -28,31 +28,50 @@
 }
 
 #pragma mark - keyboardView
-+(UIColor *)keyboardViewColor{
++(UIColor *)keyboardViewBackgroundColor{
     return UIColorFromRGB(0x002200);
 }
-+(UIColor *)keyboardViewCellColor{
-    return UIColorFromRGB(0x002222);
-}
-+(UIColor *)keyboardViewCellSelectColor{
-    return UIColorFromRGB(0x222222);
-}
 +(UIColor *)keyboardViewCellLabelNormalColor{
-    return UIColorFromRGB(0xff0022);
+    return UIColorFromRGB(0xFFFF00);
 }
 +(UIColor *)keyboardViewCellLabelHighlightColor{
-    return UIColorFromRGB(0xff0055);
+    return UIColorFromRGB(0xFFFFFF);
 }
-+(UIColor *)keyboardViewCellBackGroundImageViewNormalColor{
-    return UIColorFromRGB(0x550055);
++(UIImage *)keyboardViewCellBackGroundImageViewNormalImage{
+    static UIImage *keyboardViewCellBackGroundImageViewNormalImage;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIGraphicsBeginImageContext(CGSizeMake(1, 1));
+        CGContextRef ct = UIGraphicsGetCurrentContext();
+        CGContextAddRect(ct, CGRectMake(0, 0, 1, 1));
+        [UIColorFromRGB(0x550055) setFill];
+        CGContextDrawPath(ct, kCGPathFill);
+        keyboardViewCellBackGroundImageViewNormalImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    });
+
+    return keyboardViewCellBackGroundImageViewNormalImage;
 }
-+(UIColor *)keyboardViewCellBackGroundImageViewHighlightColor{
-     return UIColorFromRGB(0xffff55);
+
++(UIImage *)keyboardViewCellBackGroundImageViewHighlightImage{
+    static UIImage *keyboardViewCellBackGroundImageViewHighlightImage;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIGraphicsBeginImageContext(CGSizeMake(1, 1));
+        CGContextRef ct = UIGraphicsGetCurrentContext();
+        CGContextAddRect(ct, CGRectMake(0, 0, 1, 1));
+        [UIColorFromRGB(0x55FF55) setFill];
+        CGContextDrawPath(ct, kCGPathFill);
+        keyboardViewCellBackGroundImageViewHighlightImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    });
+    
+     return keyboardViewCellBackGroundImageViewHighlightImage;
 }
 
 #pragma mark - containerView
 +(UIColor *)containerViewBackgroundColor{
-    return UIColorFromRGB(0xf00f55);
+    return UIColorFromRGB(0x001255);
 }
 
 @end

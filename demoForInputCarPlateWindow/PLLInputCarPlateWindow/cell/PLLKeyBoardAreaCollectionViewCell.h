@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PLLKeyBoardAreaCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end

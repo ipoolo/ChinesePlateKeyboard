@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, PLLInputKeyBoardTpyeTag){
+    PLLInputSelectKeyboardTypeProvince = 0,
+    PLLInputSelectKeyboardTypeCity,
+    PLLInputSelectKeyboardTypeNormalPlate,
+    PLLInputSelectKeyboardTypeLastPlate,
+};
+
 @interface PLLInputCarPlateWindowCommon : NSObject
+
++(NSArray *)keyboardTypeArrayWithTag:(PLLInputKeyBoardTpyeTag) tag;
 
 @end

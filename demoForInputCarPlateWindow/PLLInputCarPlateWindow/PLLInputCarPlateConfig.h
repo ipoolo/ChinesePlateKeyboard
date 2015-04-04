@@ -11,20 +11,18 @@
 @interface PLLInputCarPlateConfig : NSObject
 
 #pragma mark - resultView
-+(UIColor *)resultViewColor;
++(UIColor *)resultViewBackgroundColor;
 +(UIColor *)resultViewCellColor;
-+(UIColor *)resultViewCellSelectColor;
++(UIColor *)resultViewCellSelectedColor;
 +(UIColor *)resultViewCellLabelNormalColor;
 +(UIColor *)resultViewCellLabelHighlightColor;
 
 #pragma mark - keyboardView
-+(UIColor *)keyboardViewColor;
-+(UIColor *)keyboardViewCellColor;
-+(UIColor *)keyboardViewCellSelectColor;
++(UIColor *)keyboardViewBackgroundColor;
 +(UIColor *)keyboardViewCellLabelNormalColor;
 +(UIColor *)keyboardViewCellLabelHighlightColor;
-+(UIColor *)keyboardViewCellBackGroundImageViewNormalColor;
-+(UIColor *)keyboardViewCellBackGroundImageViewHighlightColor;
++(UIImage *)keyboardViewCellBackGroundImageViewNormalImage;
++(UIImage *)keyboardViewCellBackGroundImageViewHighlightImage;
 
 #pragma mark - containerView
 +(UIColor *)containerViewBackgroundColor;
