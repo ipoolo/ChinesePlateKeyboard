@@ -7,6 +7,7 @@
 //
 
 #import "PLLInputCarPlateConfig.h"
+#import "UIImage+WattImageFromUIColor.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation PLLInputCarPlateConfig
 
@@ -41,13 +42,7 @@
     static UIImage *keyboardViewCellBackGroundImageViewNormalImage;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        UIGraphicsBeginImageContext(CGSizeMake(1, 1));
-        CGContextRef ct = UIGraphicsGetCurrentContext();
-        CGContextAddRect(ct, CGRectMake(0, 0, 1, 1));
-        [UIColorFromRGB(0x550055) setFill];
-        CGContextDrawPath(ct, kCGPathFill);
-        keyboardViewCellBackGroundImageViewNormalImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        keyboardViewCellBackGroundImageViewNormalImage = [UIImage wattimageFromUicolor:UIColorFromRGB(0x550055)];
     });
 
     return keyboardViewCellBackGroundImageViewNormalImage;
@@ -57,13 +52,7 @@
     static UIImage *keyboardViewCellBackGroundImageViewHighlightImage;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        UIGraphicsBeginImageContext(CGSizeMake(1, 1));
-        CGContextRef ct = UIGraphicsGetCurrentContext();
-        CGContextAddRect(ct, CGRectMake(0, 0, 1, 1));
-        [UIColorFromRGB(0x55FF55) setFill];
-        CGContextDrawPath(ct, kCGPathFill);
-        keyboardViewCellBackGroundImageViewHighlightImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        keyboardViewCellBackGroundImageViewHighlightImage = [UIImage wattimageFromUicolor:UIColorFromRGB(0x55FF55)];
     });
     
      return keyboardViewCellBackGroundImageViewHighlightImage;

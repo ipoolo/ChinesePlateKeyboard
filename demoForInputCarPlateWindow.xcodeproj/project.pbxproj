@@ -23,6 +23,7 @@
 		932F0BDB1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BDA1ACEDF0A000A4E7B /* PLLInputResultAreaViewHandler.m */; };
 		932F0BDE1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 932F0BDD1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m */; };
 		93F13B811ACFE191000DA503 /* PLLInputCarPlateConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F13B801ACFE191000DA503 /* PLLInputCarPlateConfig.m */; };
+		93F13B891ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F13B881ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		932F0BDD1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputKeyboardAreaViewHandler.m; path = PLLInputCarPlateWindow/handler/PLLInputKeyboardAreaViewHandler.m; sourceTree = "<group>"; };
 		93F13B7F1ACFE191000DA503 /* PLLInputCarPlateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLLInputCarPlateConfig.h; path = PLLInputCarPlateWindow/PLLInputCarPlateConfig.h; sourceTree = "<group>"; };
 		93F13B801ACFE191000DA503 /* PLLInputCarPlateConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLLInputCarPlateConfig.m; path = PLLInputCarPlateWindow/PLLInputCarPlateConfig.m; sourceTree = "<group>"; };
+		93F13B871ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WattImageFromUIColor.h"; sourceTree = "<group>"; };
+		93F13B881ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WattImageFromUIColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 		932F0BC61ACEB504000A4E7B /* WINDOW */ = {
 			isa = PBXGroup;
 			children = (
+				93F13B861ACFEC73000DA503 /* category */,
 				930A059A1ACFD33500A941B5 /* config */,
 				932F0BD81ACEDDC1000A4E7B /* handler */,
 				932F0BCB1ACEDAAB000A4E7B /* cell */,
@@ -206,6 +210,15 @@
 				932F0BDD1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m */,
 			);
 			name = handler;
+			sourceTree = "<group>";
+		};
+		93F13B861ACFEC73000DA503 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				93F13B871ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.h */,
+				93F13B881ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.m */,
+			);
+			name = category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +328,7 @@
 				932F0BA61ACEB4FB000A4E7B /* AppDelegate.m in Sources */,
 				93F13B811ACFE191000DA503 /* PLLInputCarPlateConfig.m in Sources */,
 				932F0BD11ACEDB0C000A4E7B /* PLLKeyBoardAreaCollectionViewCell.m in Sources */,
+				93F13B891ACFEC7C000DA503 /* UIImage+WattImageFromUIColor.m in Sources */,
 				932F0BD61ACEDD69000A4E7B /* PLLResultAreaCellCollectionViewCell.m in Sources */,
 				932F0BDE1ACEDF27000A4E7B /* PLLInputKeyboardAreaViewHandler.m in Sources */,
 				930A05991ACF8B8400A941B5 /* PLLInputCarPlateWindowCommon.m in Sources */,
