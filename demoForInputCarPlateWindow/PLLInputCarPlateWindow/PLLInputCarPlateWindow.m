@@ -15,9 +15,6 @@
 #import "PLLInputCarPlateConfig.h"
 
 @interface PLLInputCarPlateWindow()<PLLInputResultAreaViewHandlerDelegate,PLLInputKeyboardAreaViewHandlerDelegate>
-{
-    
-}
 
 @property (nonatomic,strong) NSLayoutConstraint *containViewHeightConstatint;
 @property (nonatomic,copy) NSArray *arrayPlate;
@@ -40,7 +37,7 @@
         //converView
         shareInputCarPlateWindow.coverView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         [shareInputCarPlateWindow.coverView setBackgroundColor:[UIColor blackColor]];
-        shareInputCarPlateWindow.coverView.alpha = 0.8f;
+        shareInputCarPlateWindow.coverView.alpha = [PLLInputCarPlateConfig coverViewAlpha];
         [shareInputCarPlateWindow addSubview:shareInputCarPlateWindow.coverView];
         
         //containtView
@@ -49,12 +46,11 @@
         
         //resultAreaView
         UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc] init];
-        CGFloat cellWidth = ([[UIScreen mainScreen] bounds].size.width-6)/7;
+        CGFloat cellWidth = ([[UIScreen mainScreen] bounds].size.width-([PLLInputCarPlateConfig resultViewCellNumberInEachLine]-1))/[PLLInputCarPlateConfig resultViewCellNumberInEachLine];
         [layout setItemSize:CGSizeMake(cellWidth, cellWidth)];
-        [layout setMinimumInteritemSpacing:1.0f];
-        [layout setMinimumLineSpacing:1.0f];
+        [layout setMinimumInteritemSpacing:[PLLInputCarPlateConfig resultViewInteritemSpacing]];
+        [layout setMinimumLineSpacing:[PLLInputCarPlateConfig resultViewLineSpacing]];
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
-
         shareInputCarPlateWindow.resultAreaView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [shareInputCarPlateWindow.containtView addSubview:shareInputCarPlateWindow.resultAreaView];
         [shareInputCarPlateWindow.resultAreaView registerNib:[UINib nibWithNibName:@"PLLResultAreaCellCollectionViewCell"  bundle:nil] forCellWithReuseIdentifier:@"PLLResultAreaCellCollectionViewCell" ];
@@ -62,10 +58,10 @@
 
         //keyBoardAreaView
         UICollectionViewFlowLayout* layoutKeyboard = [[UICollectionViewFlowLayout alloc] init];
-        CGFloat keyboardCellWidth = ([[UIScreen mainScreen] bounds].size.width-8)/9;
+        CGFloat keyboardCellWidth = ([[UIScreen mainScreen] bounds].size.width-([PLLInputCarPlateConfig keyboardViewCellNumberInEachLine]-1))/[PLLInputCarPlateConfig keyboardViewCellNumberInEachLine];
         [layoutKeyboard setItemSize:CGSizeMake(keyboardCellWidth, keyboardCellWidth)];
-        [layoutKeyboard setMinimumInteritemSpacing:1];
-        [layoutKeyboard setMinimumLineSpacing:1.0f];
+        [layoutKeyboard setMinimumInteritemSpacing:[PLLInputCarPlateConfig keyboardViewInteritemSpacing]];
+        [layoutKeyboard setMinimumLineSpacing:[PLLInputCarPlateConfig keyboardViewLineSpacing]];
         [layoutKeyboard setScrollDirection:UICollectionViewScrollDirectionVertical];
         shareInputCarPlateWindow.keyboardAreaView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layoutKeyboard];
         [shareInputCarPlateWindow.containtView addSubview:shareInputCarPlateWindow.keyboardAreaView];
@@ -74,8 +70,8 @@
         [shareInputCarPlateWindow configGesture];
         [shareInputCarPlateWindow configHandler];
         [shareInputCarPlateWindow configConstraints];
-        [shareInputCarPlateWindow configKVO];
         [shareInputCarPlateWindow configDefault];
+        [shareInputCarPlateWindow configKVO];
 
 
     });
@@ -88,9 +84,9 @@
     [self.coverView setTranslatesAutoresizingMaskIntoConstraints:NO];
     NSDictionary *views = NSDictionaryOfVariableBindings(_containtView,_coverView);
     CGFloat containViewHeight,resultAreaHeight,keyboardAreaHeight;
-    resultAreaHeight = ([[UIScreen mainScreen] bounds].size.width-6)/7;//每行7个 列间距1 行间距1
-    keyboardAreaHeight = ([[UIScreen mainScreen] bounds].size.width-8)/9*5+4;//每行9个 列间距1 行间距1
-    containViewHeight = keyboardAreaHeight + resultAreaHeight + 10;
+    resultAreaHeight = ([[UIScreen mainScreen] bounds].size.width-([PLLInputCarPlateConfig resultViewCellNumberInEachLine]-1))/[PLLInputCarPlateConfig resultViewCellNumberInEachLine];//每行7个 列间距1 行间距1
+    keyboardAreaHeight = ([[UIScreen mainScreen] bounds].size.width-([PLLInputCarPlateConfig keyboardViewCellNumberInEachLine]-1))/[PLLInputCarPlateConfig keyboardViewCellNumberInEachLine]*[PLLInputCarPlateConfig keyboardViewDisplayRow]+[PLLInputCarPlateConfig keyboardViewDisplayRow]-1;//每行9个 列间距1 行间距1
+    containViewHeight = keyboardAreaHeight + resultAreaHeight + [PLLInputCarPlateConfig spacingBetweenResultViewWihtKeyboardView];
     
     NSDictionary * metrics = @{@"resultAreaHeight":@(resultAreaHeight),@"keyboardAreaHeight":@(keyboardAreaHeight)};
 
@@ -121,7 +117,7 @@
 - (void)configHandler{
 
     self.inputResultAreaViewHandler = [PLLInputResultAreaViewHandler initDataHandleWithBlk:^(NSString  *str,PLLResultAreaCellCollectionViewCell *cell ) {
-        if([str isEqualToString:@"null"]){
+        if([str isEqualToString:[PLLInputCarPlateConfig nullMarkStr]]){
             cell.label.text = @" ";
         }else{
             cell.label.text = str;
@@ -136,7 +132,7 @@
     
     
     self.inputKeyboardAreaViewHandler = [PLLInputKeyboardAreaViewHandler initDataHandleWithBlk:^(NSString *str, PLLKeyBoardAreaCollectionViewCell* cell) {
-        if([str isEqualToString:@"null"]){
+        if([str isEqualToString:[PLLInputCarPlateConfig nullMarkStr]]){
             cell.label.text = @" ";
         }else{
             cell.label.text = str;
@@ -156,7 +152,7 @@
 
 -(void)configDefault{
     //self.arrayPlate
-    self.arrayPlate = @[@"null",@"null",@"null",@"null",@"null",@"null",@"null"];
+    self.arrayPlate = @[[PLLInputCarPlateConfig nullMarkStr],[PLLInputCarPlateConfig nullMarkStr],[PLLInputCarPlateConfig nullMarkStr],[PLLInputCarPlateConfig nullMarkStr],[PLLInputCarPlateConfig nullMarkStr],[PLLInputCarPlateConfig nullMarkStr],[PLLInputCarPlateConfig nullMarkStr]];
     self.indexAddFlag = NO;
     
     [self.containtView setBackgroundColor:[PLLInputCarPlateConfig containerViewBackgroundColor]];
@@ -166,12 +162,11 @@
 }
 
 -(NSUInteger)calculateSelestIndex{
-    
     __block NSUInteger result = 0;
     if([[self.resultAreaView indexPathsForSelectedItems] count]==0){
         //没有选中的 默认放到0 位置除非有null
         [self.arrayPlate enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
-            if([obj isEqualToString:@"null"]){
+            if([obj isEqualToString:[PLLInputCarPlateConfig nullMarkStr]]){
                 result = idx;
                 *stop = YES;
             }
@@ -183,7 +178,7 @@
             result = [self selectIndexInCollectionView:self.resultAreaView]+1;
             if(result>=7){
                 [self.arrayPlate enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    if([obj isEqualToString:@"null"]){
+                    if([obj isEqualToString:[PLLInputCarPlateConfig nullMarkStr]]){
                         result = idx;
                         *stop = YES;
                     }
@@ -192,13 +187,10 @@
                     [self hide];
                     result = 6;
                 }
-                
             }
             self.indexAddFlag = NO;
         }
-        
     }
-
     return result;
 }
 
@@ -225,7 +217,6 @@
 #pragma mark - kvo
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if([@"arrayPlate" isEqualToString:keyPath]){
-        NSLog(@"change[NSKeyValueChangeNewKey]:%@",change[NSKeyValueChangeNewKey]);
         [self.inputResultAreaViewHandler setDataArray:change[NSKeyValueChangeNewKey]];
         NSUInteger index = [self calculateSelestIndex];
         [self changeKeyBoardWithIndex:index];
@@ -253,6 +244,11 @@
     self.arrayPlate = mArray;
 }
 
+#pragma mark -
+-(NSUInteger)selectIndexInCollectionView:(UICollectionView*) collectionview{
+    return ((NSIndexPath *)[[collectionview indexPathsForSelectedItems] lastObject]).row;
+}
+
 #pragma mark - public
 - (void)setPlateStr:(NSString*)str{
     NSMutableArray* mArray = [@[] mutableCopy];
@@ -266,7 +262,7 @@
         }
     }
     while([mArray count]<7){
-        [mArray addObject:@"null"];
+        [mArray addObject:[PLLInputCarPlateConfig nullMarkStr]];
     }
     self.arrayPlate = mArray;
 }
@@ -277,7 +273,7 @@
     self.hidden = NO;
     self.alpha = 1.0f;
     return self;
-
+    
 }
 
 - (void)hide{
@@ -290,22 +286,21 @@
         self.hidden = YES;
         [self resignKeyWindow];
     }];
-    [self.resultDelegate resultPlateStr:[self stringFromResultArray]];
-
+    [self.resultDelegate resultPlateStr:[self resultString]];
     
 }
 
--(NSUInteger)selectIndexInCollectionView:(UICollectionView*) collectionview{
-    return ((NSIndexPath *)[[collectionview indexPathsForSelectedItems] lastObject]).row;
-}
-
--(NSString*) stringFromResultArray{
+-(NSString*) resultString{
     NSMutableString* mStr = [@"" mutableCopy];
     for(NSString* str in self.arrayPlate){
-        [mStr appendString:str];
+        if(![[PLLInputCarPlateConfig nullMarkStr] isEqualToString:str ]){
+            [mStr appendString:str];
+        }
+        
     }
     return [mStr copy];
 }
+
 
 
 

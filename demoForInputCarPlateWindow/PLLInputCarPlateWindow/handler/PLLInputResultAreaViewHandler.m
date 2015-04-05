@@ -11,7 +11,6 @@
 @implementation PLLInputResultAreaViewHandler
 
 + (instancetype)initDataHandleWithBlk:(blk)blk indentifiyStr:(NSString*)istr dataArray:(NSArray*)array{
-    NSLog(@"%@",@"initDataHandleWithBlk");
     PLLInputResultAreaViewHandler* result = [[PLLInputResultAreaViewHandler alloc]init];
     result.setCellBlk = blk;
     result.identifierStr = istr;

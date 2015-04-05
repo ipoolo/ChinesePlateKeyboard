@@ -47,7 +47,7 @@
 }
 
 +(NSArray *)keyboardTypeArrayWithTag:(PLLInputKeyBoardTpyeTag) tag{
-    NSLog(@"self:%@",self);
+
     switch (tag) {
         case PLLInputSelectKeyboardTypeCity:
             return [self keyboardTypeCityArray];

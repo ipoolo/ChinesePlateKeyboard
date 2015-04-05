@@ -27,6 +27,15 @@
 +(UIColor *)resultViewCellLabelHighlightColor{
     return UIColorFromRGB(0x00ffff);
 }
++(int)resultViewCellNumberInEachLine{
+    return 7;
+}
++(CGFloat)resultViewInteritemSpacing{
+    return 1.0f;
+}
++(CGFloat)resultViewLineSpacing{
+    return 1.0f;
+}
 
 #pragma mark - keyboardView
 +(UIColor *)keyboardViewBackgroundColor{
@@ -58,9 +67,34 @@
      return keyboardViewCellBackGroundImageViewHighlightImage;
 }
 
+//车牌键盘全部展示需要展示44个 如果需要全部显示则（keyboardViewCellNumberInEachLine*keyboardViewDisplayRow）>44
++(int)keyboardViewCellNumberInEachLine{
+    return 9;
+}
++(CGFloat)keyboardViewInteritemSpacing{
+    return 1.0f;
+}
++(CGFloat)keyboardViewLineSpacing{
+    return 1.0f;
+}
++(int)keyboardViewDisplayRow{
+    return 5;
+}
+
 #pragma mark - containerView
 +(UIColor *)containerViewBackgroundColor{
     return UIColorFromRGB(0x001255);
+}
+
+#pragma mark - coverViewAlpha
++(CGFloat)coverViewAlpha{
+    return 0.8f;
+}
++(CGFloat)spacingBetweenResultViewWihtKeyboardView{
+    return 10.0f;
+}
++(NSString*)nullMarkStr{
+    return @"null";
 }
 
 @end

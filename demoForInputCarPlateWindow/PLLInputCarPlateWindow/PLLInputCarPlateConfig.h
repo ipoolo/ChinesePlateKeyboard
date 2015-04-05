@@ -16,6 +16,9 @@
 +(UIColor *)resultViewCellSelectedColor;
 +(UIColor *)resultViewCellLabelNormalColor;
 +(UIColor *)resultViewCellLabelHighlightColor;
++(int)resultViewCellNumberInEachLine;
++(CGFloat)resultViewInteritemSpacing;
++(CGFloat)resultViewLineSpacing;
 
 #pragma mark - keyboardView
 +(UIColor *)keyboardViewBackgroundColor;
@@ -23,7 +26,15 @@
 +(UIColor *)keyboardViewCellLabelHighlightColor;
 +(UIImage *)keyboardViewCellBackGroundImageViewNormalImage;
 +(UIImage *)keyboardViewCellBackGroundImageViewHighlightImage;
++(int)keyboardViewCellNumberInEachLine;
++(CGFloat)keyboardViewInteritemSpacing;
++(CGFloat)keyboardViewLineSpacing;
++(int)keyboardViewDisplayRow;
 
 #pragma mark - containerView
 +(UIColor *)containerViewBackgroundColor;
+
++(CGFloat)coverViewAlpha;
++(CGFloat)spacingBetweenResultViewWihtKeyboardView;
++(NSString*)nullMarkStr;
 @end

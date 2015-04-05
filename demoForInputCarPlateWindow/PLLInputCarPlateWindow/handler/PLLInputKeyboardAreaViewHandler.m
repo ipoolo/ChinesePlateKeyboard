@@ -12,7 +12,6 @@
 
 
 +(instancetype)initDataHandleWithBlk:(blk)blk indentifiyStr:(NSString*)istr keyboardTypeTag:(PLLInputKeyBoardTpyeTag) tag{
-    NSLog(@"%@",@"initDataHandleWithBlk");
     PLLInputKeyboardAreaViewHandler* result = [[PLLInputKeyboardAreaViewHandler alloc]init];
     result.setCellBlk = blk;
     result.identifierStr = istr;
@@ -24,11 +23,11 @@
 -(void)changeKeyBoardTypeToType:(PLLInputKeyBoardTpyeTag) tag withCollectionView:(UICollectionView*) collectionview{
     self.dataArray = [PLLInputCarPlateWindowCommon keyboardTypeArrayWithTag:tag];
     [collectionview reloadData];
+    [collectionview scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.identifierStr forIndexPath:indexPath];
-    //TODO: 修改颜色
     _setCellBlk([self objectInDataArrayAtIndex:indexPath],cell);
     return cell;
 }
