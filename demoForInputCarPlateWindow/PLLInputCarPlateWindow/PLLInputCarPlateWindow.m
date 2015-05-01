@@ -270,9 +270,8 @@
 + (PLLInputCarPlateWindow* )showWithPlateStr:(NSString*) str{
     PLLInputCarPlateWindow *plateWindow = [PLLInputCarPlateWindow shareInputCarPlateWindow];
     [plateWindow setPlateStr:str];
-    [plateWindow makeKeyWindow];
-    NSLog(@"%@",[UIApplication sharedApplication].keyWindow);
-    plateWindow.hidden = NO;
+    [plateWindow makeKeyAndVisible];
+
     plateWindow.alpha = 1.0f;
     return plateWindow;
     
