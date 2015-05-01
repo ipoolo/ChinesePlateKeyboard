@@ -54,8 +54,8 @@
         shareInputCarPlateWindow.resultAreaView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [shareInputCarPlateWindow.containtView addSubview:shareInputCarPlateWindow.resultAreaView];
         [shareInputCarPlateWindow.resultAreaView registerNib:[UINib nibWithNibName:@"PLLResultAreaCellCollectionViewCell"  bundle:nil] forCellWithReuseIdentifier:@"PLLResultAreaCellCollectionViewCell" ];
-
-
+        
+        
         //keyBoardAreaView
         UICollectionViewFlowLayout* layoutKeyboard = [[UICollectionViewFlowLayout alloc] init];
         CGFloat keyboardCellWidth = ([[UIScreen mainScreen] bounds].size.width-([PLLInputCarPlateConfig keyboardViewCellNumberInEachLine]-1))/[PLLInputCarPlateConfig keyboardViewCellNumberInEachLine];
@@ -72,8 +72,8 @@
         [shareInputCarPlateWindow configConstraints];
         [shareInputCarPlateWindow configDefault];
         [shareInputCarPlateWindow configKVO];
-
-
+        
+        
     });
     return shareInputCarPlateWindow;
 }
@@ -89,15 +89,15 @@
     containViewHeight = keyboardAreaHeight + resultAreaHeight + [PLLInputCarPlateConfig spacingBetweenResultViewWihtKeyboardView];
     
     NSDictionary * metrics = @{@"resultAreaHeight":@(resultAreaHeight),@"keyboardAreaHeight":@(keyboardAreaHeight)};
-
+    
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_containtView]-0-|" options:NSLayoutFormatAlignAllTop metrics:nil views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_containtView]-0-|" options:NSLayoutFormatAlignAllLeft metrics:nil views:views]];
     self.containViewHeightConstatint = [NSLayoutConstraint constraintWithItem:self.containtView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0.0f constant:containViewHeight];
     [self.containtView addConstraint:self.containViewHeightConstatint];
     
-
-
+    
+    
     [self.resultAreaView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.keyboardAreaView setTranslatesAutoresizingMaskIntoConstraints:NO];
     views = NSDictionaryOfVariableBindings(_resultAreaView,_keyboardAreaView);
@@ -106,8 +106,8 @@
     
     [self.containtView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_keyboardAreaView(==keyboardAreaHeight)]-0-|" options:NSLayoutFormatAlignAllTop metrics:metrics views:views]];
     [self.containtView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_keyboardAreaView]-0-|" options:NSLayoutFormatAlignAllTop metrics:metrics views:views]];
-
-
+    
+    
 }
 
 - (void)configGesture{
@@ -115,7 +115,7 @@
 }
 
 - (void)configHandler{
-
+    
     self.inputResultAreaViewHandler = [PLLInputResultAreaViewHandler initDataHandleWithBlk:^(NSString  *str,PLLResultAreaCellCollectionViewCell *cell ) {
         if([str isEqualToString:[PLLInputCarPlateConfig nullMarkStr]]){
             cell.label.text = @" ";
@@ -123,12 +123,12 @@
             cell.label.text = str;
         }
         
-
+        
     } indentifiyStr:@"PLLResultAreaCellCollectionViewCell" dataArray:self.arrayPlate];
     self.inputResultAreaViewHandler.delegate = self;
     self.resultAreaView.delegate = self.inputResultAreaViewHandler;
     self.resultAreaView.dataSource = self.inputResultAreaViewHandler;
-
+    
     
     
     self.inputKeyboardAreaViewHandler = [PLLInputKeyboardAreaViewHandler initDataHandleWithBlk:^(NSString *str, PLLKeyBoardAreaCollectionViewCell* cell) {
@@ -143,7 +143,7 @@
     self.keyboardAreaView.delegate = self.inputKeyboardAreaViewHandler;
     self.keyboardAreaView.dataSource = self.inputKeyboardAreaViewHandler;
     
-
+    
 }
 
 -(void)configKVO{
@@ -158,7 +158,7 @@
     [self.containtView setBackgroundColor:[PLLInputCarPlateConfig containerViewBackgroundColor]];
     [self.resultAreaView setBackgroundColor:[PLLInputCarPlateConfig resultViewBackgroundColor]];
     [self.keyboardAreaView setBackgroundColor:[PLLInputCarPlateConfig keyboardViewBackgroundColor]];
-
+    
 }
 
 -(NSUInteger)calculateSelestIndex{
@@ -171,7 +171,7 @@
                 *stop = YES;
             }
         }];
-
+        
     }else{
         //有选中的然后又改变了 且indexAddflag标记为ture 则下一移一位
         if(self.indexAddFlag){
@@ -197,7 +197,7 @@
 
 #pragma mark - changeKeyBoardWithIndex
 -(void)changeKeyBoardWithIndex:(NSUInteger) index{
-
+    
     if(index!=[self selectIndexInCollectionView:self.resultAreaView]){
         int tag = 0;
         if(index == 0){
@@ -222,7 +222,7 @@
         [self changeKeyBoardWithIndex:index];
         [self.resultAreaView reloadData];
         [self.inputResultAreaViewHandler selectIndex:index collectionView:self.resultAreaView];
-
+        
     }
 }
 
@@ -267,12 +267,14 @@
     self.arrayPlate = mArray;
 }
 
-- (PLLInputCarPlateWindow* )showWithPlateStr:(NSString*) str{
-    [self setPlateStr:str];
-    [self makeKeyWindow];
-    self.hidden = NO;
-    self.alpha = 1.0f;
-    return self;
++ (PLLInputCarPlateWindow* )showWithPlateStr:(NSString*) str{
+    PLLInputCarPlateWindow *plateWindow = [PLLInputCarPlateWindow shareInputCarPlateWindow];
+    [plateWindow setPlateStr:str];
+    [plateWindow makeKeyWindow];
+    NSLog(@"%@",[UIApplication sharedApplication].keyWindow);
+    plateWindow.hidden = NO;
+    plateWindow.alpha = 1.0f;
+    return plateWindow;
     
 }
 
@@ -284,7 +286,6 @@
         self.alpha = 0.0f;
     } completion:^(BOOL finished) {
         self.hidden = YES;
-        [self resignKeyWindow];
     }];
     [self.resultDelegate resultPlateStr:[self resultString]];
     

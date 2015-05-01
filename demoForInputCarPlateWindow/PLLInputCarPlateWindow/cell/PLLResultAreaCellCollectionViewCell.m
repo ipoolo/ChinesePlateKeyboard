@@ -19,6 +19,7 @@
 
     [self setSelectedBackgroundView:[[UIView alloc] init]];
     [self.selectedBackgroundView setBackgroundColor:[PLLInputCarPlateConfig resultViewCellSelectedColor]];
+    
 }
 
 @end
