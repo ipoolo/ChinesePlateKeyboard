@@ -33,7 +33,7 @@
 }
 
 -(void)test:(id) sender{
-    [[[PLLInputCarPlateWindow shareInputCarPlateWindow] showWithPlateStr:[bt titleForState:UIControlStateNormal]] setResultDelegate:self];
+    [[PLLInputCarPlateWindow showWithPlateStr:[bt titleForState:UIControlStateNormal]] setResultDelegate:self];
 //    [[PLLInputCarPlateWindow shareInputCarPlateWindow] showWithPlateStr:@"陕A"];
 }
 

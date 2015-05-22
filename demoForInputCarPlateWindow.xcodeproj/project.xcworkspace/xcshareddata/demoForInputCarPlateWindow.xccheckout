@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AF10D7D0-E9C1-4BEB-A802-A71C50906F58</string>
+	<key>IDESourceControlProjectName</key>
+	<string>demoForInputCarPlateWindow</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7CD709D0676F638D439687FD7A1562570FB726CF</key>
+		<string>github.com:ipoolo/ChinesePlateKeyboard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>demoForInputCarPlateWindow.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7CD709D0676F638D439687FD7A1562570FB726CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ipoolo/ChinesePlateKeyboard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7CD709D0676F638D439687FD7A1562570FB726CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7CD709D0676F638D439687FD7A1562570FB726CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>demoForInputCarPlateWindow</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -26,9 +26,10 @@
 
 + (instancetype)shareInputCarPlateWindow;
 
++ (PLLInputCarPlateWindow* )showWithPlateStr:(NSString*) str;
 
 - (void)setPlateStr:(NSString*)str;
-- (PLLInputCarPlateWindow* )showWithPlateStr:(NSString*) str;
+
 - (void)hide;
 
 @end
