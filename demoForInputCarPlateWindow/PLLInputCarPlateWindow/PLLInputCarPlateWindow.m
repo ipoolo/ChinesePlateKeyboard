@@ -54,6 +54,7 @@
         shareInputCarPlateWindow.resultAreaView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [shareInputCarPlateWindow.containtView addSubview:shareInputCarPlateWindow.resultAreaView];
         [shareInputCarPlateWindow.resultAreaView registerNib:[UINib nibWithNibName:@"PLLResultAreaCellCollectionViewCell"  bundle:nil] forCellWithReuseIdentifier:@"PLLResultAreaCellCollectionViewCell" ];
+        [shareInputCarPlateWindow.resultAreaView setDelaysContentTouches:NO];
         
         
         //keyBoardAreaView
@@ -66,6 +67,7 @@
         shareInputCarPlateWindow.keyboardAreaView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layoutKeyboard];
         [shareInputCarPlateWindow.containtView addSubview:shareInputCarPlateWindow.keyboardAreaView];
         [shareInputCarPlateWindow.keyboardAreaView registerNib:[UINib nibWithNibName:@"PLLKeyBoardAreaCollectionViewCell"  bundle:nil] forCellWithReuseIdentifier:@"PLLKeyBoardAreaCollectionViewCell" ];
+        [shareInputCarPlateWindow.keyboardAreaView setDelaysContentTouches:NO];
         
         [shareInputCarPlateWindow configGesture];
         [shareInputCarPlateWindow configHandler];
@@ -234,6 +236,7 @@
 #pragma mark - PLLInputKeyboardAreaViewHandlerDelegate
 -(void)keyboardClickStr:(NSString *)str{
     //修改plate
+    
     self.indexAddFlag = YES;
     [self changeArrayPlateWithStr:str index:[self selectIndexInCollectionView:self.resultAreaView]];
 }
@@ -271,7 +274,7 @@
     PLLInputCarPlateWindow *plateWindow = [PLLInputCarPlateWindow shareInputCarPlateWindow];
     [plateWindow setPlateStr:str];
     [plateWindow makeKeyAndVisible];
-
+    
     plateWindow.alpha = 1.0f;
     return plateWindow;
     
